@@ -19,6 +19,7 @@ jobs:
       - run: unzip appguard.zip -d ex
       - run: cp -r ex/proj/. .
       - run: flutter pub get
+      - run: echo "android.enableR8.fullMode=false" >> android/gradle.properties
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
         with:
